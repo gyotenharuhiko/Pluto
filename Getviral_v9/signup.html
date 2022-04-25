@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MSP7DSR');</script>
+    <!-- End Google Tag Manager -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Askbootstrap">
+    <meta name="author" content="Askbootstrap">
+    <link rel="icon" type="image/png" href="img/fav.png">
+    <title>Get viral - Meet Your KOC, Earn Your Business</title>
+    <!-- Slick Slider -->
+    <link rel="stylesheet" type="text/css" href="vendor/slick/slick.min.css" />
+    <link rel="stylesheet" type="text/css" href="vendor/slick/slick-theme.min.css" />
+    <!-- Feather Icon-->
+    <link href="vendor/icons/feather.css" rel="stylesheet" type="text/css">
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="css/style.css" rel="stylesheet">
+    <!-- Sidebar CSS -->
+    <link href="vendor/sidebar/demo.css" rel="stylesheet">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.slim.min.js"></script>
+</head>
+<body>
+      <!-- Google Tag Manager (noscript) 请将此代码粘帖到紧跟起始 <body> 标记之后的位置-->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MSP7DSR"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div class="osahan-signup login-page">
+        <video loop autoplay muted id="vid">
+            <source src="img/bg.mp4" type="video/mp4">
+            <source src="img/bg.mp4" type="video/ogg">
+            Your browser does not support the video tag.
+         </video>
+         
+       
+            <div class="px-5 col-md-6 ml-auto">
+                <div class="px-5 col-10 mx-auto">
+                    <h3 class="text-dark my-0">Get Viral<br> 探店推广 赚取回报<br>感受KOL的生活</h3>
+                    <hr>
+                    
+                    <form class="mt-5 mb-4" id="signupForm">
+                        
+                        <div class="form-group">
+                            <label for="exampleInputEmail1" class="text-dark">Email</label>
+                            <input type="email" required placeholder="请输入邮箱地址" class="form-control" id="email" name="email" value="" aria-describedby="emailHelp">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputName1" class="text-dark">用户名</label>
+                            <input type="text" required placeholder="请输入用户名" class="form-control" id="username" name="username" value="">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputNumber1" class="text-dark">手机号码</label>
+                            <input type="number" required placeholder="请输入手机号码" class="form-control" id="phone" name="phone" value="">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1" class="text-dark">密码</label>
+                            <input type="password" required placeholder="请输入密码" class="form-control" id="password" name="password" value="">
+                        </div>
+                        <h6 class="text-50">小红书账号信息：</h6>
+                        <div class="form-group">
+                            <label for="exampleInputName2" class="text-dark">小红书昵称</label>
+                            <input type="text" required placeholder="请填写小红书名" class="form-control" id="redname">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputNumber2" class="text-dark">小红书号</label>
+                            <input type="text" required placeholder="请填写小红书账号" class="form-control" id="rednumber">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputNumber3" class="text-dark">粉丝数</label>
+                            <input type="number" required placeholder="请填写粉丝数" class="form-control" id="redfans">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputNumber4" class="text-dark">获赞与收藏</label>
+                            <input type="number" required placeholder="请填写获赞与收藏" class="form-control" id="redfav">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputName3" class="text-dark">小红书主页链接</label>
+                            <input type="text" required placeholder="请复制小红书主页链接" class="form-control" id="redlink">
+                        </div>
+                        <button class="btn btn-primary btn-lg btn-block" id="submit" name="submit" type="submit" value="Signup">
+                           注册
+                        </button>
+                    </form>
+                </div>
+                <div class="new-acc d-flex align-items-center justify-content-center">
+                    <a href="login.html">
+                        <p class="text-center m-0">又有账号？点击立即登录</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+    <script>
+        // Create - Register user
+            // Method: POST
+            $(document).ready(function(){
+  
+  document.getElementById('signupForm').addEventListener('submit',register);
+
+  function register(e) {
+        e.preventDefault();
+        let uri = "https://v1.nocodeapi.com/fishytowel/airtable/xHiYjxBtowbknVqV?tableName=User";
+        let username = document.getElementById("username");
+        let email = document.getElementById("email");
+        let password = document.getElementById("password");
+        let phone = document.getElementById("phone");
+        let redname = document.getElementById("redname");
+        let rednumber = document.getElementById("rednumber");
+        let redfans = document.getElementById("redfans");
+        let redfav = document.getElementById("redfav");
+        let redlink = document.getElementById("redlink");
+        let tableName = "User"
+
+        let entry = [
+                {"username": username.value,
+                "email": email.value,
+                "password": password.value,
+                "phone": phone.value,
+                "redname": redname.value,
+                "rednumber": rednumber.value,
+                "redfans": redfans.value,
+                "redfav": redfav.value,
+                "redlink": redfav.value}
+        ]
+
+        
+        console.log("Entry",entry);
+        let h = new Headers();
+        h.append('Content-type', 'application/json');
+        h.append('Authorization', `Bearer keyVHAAZbzO6hhyDz`);
+  
+
+   
+
+        let req = new Request(uri, {
+            method: 'POST',
+            body: JSON.stringify(entry),
+            cache: 'no-cache',
+            headers: h,
+            mode: 'cors'
+        });
+       
+
+        fetch(req)
+        .then(function(response) {
+            if(response.ok) {
+            return response.json();
+            } else {
+            throw new Error('Bad connection.');
+            }
+        })
+        .then((data) => {
+            console.log(data); 
+            let jsonData = JSON.stringify(data);
+            window.location.href = 'signupsuccess.html';
+        })
+        .catch((err)=> {
+            console.log("ERROR:",err.message);
+        });
+        
+    }  
+    
+
+    });
+</script>
+
+
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="vendor/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- slick Slider JS-->
+    <script type="text/javascript" src="vendor/slick/slick.min.js"></script>
+    <!-- Sidebar JS-->
+    <script type="text/javascript" src="vendor/sidebar/hc-offcanvas-nav.js"></script>
+    <!-- Custom scripts for all pages-->
+    <script type="text/javascript" src="js/osahan.js"></script>
+    
+</body>
+
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MSP7DSR');</script>
+    <!-- End Google Tag Manager -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Askbootstrap">
+    <meta name="author" content="Askbootstrap">
+    <link rel="icon" type="image/png" href="img/fav.png">
+    <title>Get viral - Meet Your KOC, Earn Your Business</title>
+    <!-- Slick Slider -->
+    <link rel="stylesheet" type="text/css" href="vendor/slick/slick.min.css" />
+    <link rel="stylesheet" type="text/css" href="vendor/slick/slick-theme.min.css" />
+    <!-- Feather Icon-->
+    <link href="vendor/icons/feather.css" rel="stylesheet" type="text/css">
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="css/style.css" rel="stylesheet">
+    <!-- Sidebar CSS -->
+    <link href="vendor/sidebar/demo.css" rel="stylesheet">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.slim.min.js"></script>
+</head>
+<body>
+      <!-- Google Tag Manager (noscript) 请将此代码粘帖到紧跟起始 <body> 标记之后的位置-->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MSP7DSR"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div class="login-page vh-100">
+        <video loop autoplay muted id="vid">
+            <source src="img/bg.mp4" type="video/mp4">
+            <source src="img/bg.mp4" type="video/ogg">
+            Your browser does not support the video tag.
+         </video>
+        <div class="d-flex align-items-center justify-content-center vh-100">
+            <div class="px-5 col-md-6 ml-auto">
+                <div class="px-5 col-10 mx-auto">
+                    <h3 class="text-dark my-0">Get Viral<br> 探店推广 赚取回报<br>感受KOL的生活</h3>
+                    <hr>
+                    <h5 class="text-50">Welcome Back!</h5>
+                    <form class="mt-5 mb-4" id="loginForm">
+                        <div class="form-group">
+                            <label for="exampleInputName1" class="text-dark">用户名</label>
+                            <input type="text" required placeholder="请输入用户名" class="form-control" id="username">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1" class="text-dark">密码</label>
+                            <input type="password" required placeholder="请输入密码" class="form-control" id="password">
+                        </div>
+                        <button class="btn btn-primary btn-lg btn-block" name="submit" type="submit" value="Login">登录</button>
+                    </form>
+                    <div class="d-flex align-items-center justify-content-center">
+                        <a href="signup.html">
+                            <p class="text-center m-0">还没有账号？点击注册</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <nav id="main-nav">
+        <script>
+            // Login Authentication 
+      
+            function loginForm(e) {
+              e.preventDefault();
+              let uri = "https://v1.nocodeapi.com/fishytowel/airtable/xHiYjxBtowbknVqV?tableName=User";
+              let username = document.getElementById("username");
+              let password = document.getElementById("password");
+              let entry = {
+                "fields":{
+                "username": username.value,
+                "password": password.value
+              } 
+            }
+              console.log(username,password)
+              console.log("entry=", entry);
+              let h = new Headers();
+              h.append('Content-type', 'application/json');
+              h.append('Authorization', `Bearer keyVHAAZbzO6hhyDz`);
+              let req = new Request(uri, {
+                method: 'POST',
+                body: JSON.stringify(entry),
+                cache: 'no-cache',
+                headers: h,
+                mode: 'cors'
+              });
+      
+              fetch(req)
+      
+              .then(response => response.json())
+              .then(data => {
+              // .then(json => {
+                    console.log("data=",data);
+                    let inMemoryToken = data.token;
+                    console.log("inMemoryToken=",inMemoryToken);
+                    localStorage.setItem('token', JSON.stringify(inMemoryToken));
+                    window.location.href = 'freetrail.html';
+                })
+                .catch((err)=> {
+                      console.log("ERROR:",err.message);
+                      document.getElementById('loginForm').innerHTML = "<h1>Wrong username or password or both.</h1>";
+                  });
+              }
+              document.getElementById('loginForm').addEventListener('submit',loginForm);
+    
+
+              </script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="vendor/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- slick Slider JS-->
+    <script type="text/javascript" src="vendor/slick/slick.min.js"></script>
+</body>
+
+</html>
